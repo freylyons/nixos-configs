@@ -6,7 +6,7 @@
     ../../common/default.nix
     ../../common/users.nix
     ../../common/networking.nix
-    ../../common/home-manager.nix
+#     ../../common/home-manager.nix
     ./hardware-configuration.nix # Device-specific hardware settings
     ./extra.nix # Import additional tweaks for this system
   ];
