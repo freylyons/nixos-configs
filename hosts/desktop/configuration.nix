@@ -1,14 +1,14 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   # Import shared system-wide settings
   imports = [
     ../../common/default.nix
     ../../common/users.nix
-    ../../common/networking.nix
+#     ../../common/networking.nix
 #     ../../common/home-manager.nix
     ./hardware-configuration.nix # Device-specific hardware settings
-    ./extra.nix # Import additional tweaks for this system
+#     ./extra.nix # Import additional tweaks for this system
   ];
 
   # Device-specific hostname
@@ -34,6 +34,15 @@
 
   ## enable nvidia drivers
   # whitelist nvidia drivers from unfree list
+  # in here put the changes to configuration settings for monitors, etc.
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+             "nvidia"
+             "nvidia-x11"
+             "nvidia-settings"
+             "discord"
+             "steam"
+             "steam-unwrapped"
+           ];
 
   # DONE IN EXTRA
 #   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [

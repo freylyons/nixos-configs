@@ -4,8 +4,8 @@
     firefox.enable = lib.mkEnableOption "enables the firefox configuration on the system";
   };
 
-  config = lib.mkIf config.option1.enable {
-    environment.systemPackages = [ pkgs.discord ];
+  config = lib.mkIf config.firefox.enable {
+    environment.systemPackages = [ pkgs.firefox ];
 
     #
     # --- write the profile configuration for firefox here

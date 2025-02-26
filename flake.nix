@@ -4,14 +4,14 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-23.11";
-#     home-manager = {
-#       url = "github:nix-community/home-manager";
-#       inputs.nixpkgs.follows = "nixpkgs"; # Ensure consistency
-#     };
-#     plasma-manager = {
-#       url = "github:nix-community/plasma-manager";
-#       inputs.nixpkgs.follows = "nixpkgs";
-#       inputs.home-manager.follows = "home-manager";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs"; # Ensure consistency
+    };
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
   };
 

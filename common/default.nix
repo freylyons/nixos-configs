@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   imports = [
@@ -11,5 +11,10 @@
 
   # enable flakes for reproducable declarative building
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # enable unfree programs
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+             "discord"
+           ];
 
 }
