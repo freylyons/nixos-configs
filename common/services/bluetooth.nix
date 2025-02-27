@@ -2,7 +2,7 @@
 
 {
     options = {
-        bluetooth.enable = lib.mkEnableOption "enables the audacity configuration on the system";
+        bluetooth.enable = lib.mkEnableOption "enables the bluetooth service configuration on the system";
     };
 
     config = lib.mkIf config.bluetooth.enable {
