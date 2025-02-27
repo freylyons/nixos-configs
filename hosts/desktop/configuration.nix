@@ -4,7 +4,7 @@
   # Import shared system-wide settings
   imports = [
     ../../common/default.nix
-    ../../common/users.nix
+#     ../../common/users.nix
 #     ../../common/networking.nix
 #     ../../common/home-manager.nix
     ./hardware-configuration.nix # Device-specific hardware settings

@@ -4,7 +4,7 @@
     ./audacity.nix
     ./firefox.nix
     ./discord.nix
-#     ./baobab.nix
+    ./baobab.nix
     ./libreoffice.nix
     ./pycharm.nix
     ./steam.nix
@@ -20,7 +20,7 @@
   audacity.enable = lib.mkDefault true;
   firefox.enable = lib.mkDefault true;
   discord.enable = lib.mkDefault true;
-#   baobab.enable = lib.mkDefault true;
+  baobab.enable = lib.mkDefault true;
   libreoffice.enable = lib.mkDefault true;
   pycharm.enable = lib.mkDefault true;
   steam.enable = lib.mkDefault true;
