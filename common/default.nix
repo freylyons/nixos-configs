@@ -2,12 +2,11 @@
 
 {
   imports = [
-    ./localisation.nix
     ./services/services-default.nix
-    ./CLI-tools/CLI-pkglist.nix
-    ./desktop-applications/desktop-pkglist.nix
+    ./cli-applications/cli-applications-default.nix
+    ./desktop-applications/desktop-applications-default.nix
     ./users/users.nix
-
+    ./localisation.nix
   ];
 
   # enable flakes for reproducable declarative building
