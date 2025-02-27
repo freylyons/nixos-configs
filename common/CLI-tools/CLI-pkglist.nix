@@ -14,6 +14,6 @@
     android-tools # tools for working with android operating systems
     ranger # CLI file system navigation
     tree # CLI file system structure viewer
-    powerdevil # power management
+    kdePackages.powerdevil # power management
   ];
 }
