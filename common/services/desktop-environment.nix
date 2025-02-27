@@ -1,12 +1,18 @@
-{ config, ... }:
+{ config, lib, ... }:
 
 {
-    # display manager
-    services.displayManager.sddm.enable = true;
+    options = {
+        desktop-environment.enable = lib.mkEnableOption "Enables the Desktop environment for the system";
+    };
 
-    # display server (wayland)
-    services.displayManager.sddm.wayland.enable = true;
+    config = lib.mkIf config.desktop-environment.enable {
+      # display manager
+      services.displayManager.sddm.enable = true;
 
-    # desktop environment
-    services.desktopManager.plasma6.enable = true;
+      # display server (wayland)
+      services.displayManager.sddm.wayland.enable = true;
+
+      # desktop environment
+      services.desktopManager.plasma6.enable = true;
+    };
 }

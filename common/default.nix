@@ -3,7 +3,7 @@
 {
   imports = [
     ./localisation.nix
-    ./services/desktop-environment.nix
+    ./services/services-default.nix
     ./CLI-tools/CLI-pkglist.nix
     ./desktop-applications/desktop-pkglist.nix
     ./users/users.nix
