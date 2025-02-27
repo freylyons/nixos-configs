@@ -3,6 +3,7 @@
 {
     imports = [
         ./git.nix
+        ./firefox.nix
     ];
 
     #
@@ -10,5 +11,6 @@
     #
 
     git.enable = lib.mkDefault true;
+    firefox.enable = lib.mkDefault true;
 
 }
