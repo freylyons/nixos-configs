@@ -6,6 +6,7 @@
     
     Can Users be modularised?
     Can unfree predicates be modularised?
+    Home Manager for User Side Applications? Maybe set desktop applications to false by default?
 
 ## Micro
 

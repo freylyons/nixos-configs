@@ -1,10 +1,10 @@
 { pkgs, lib, config, ... } :
 {
   options = {
-    discord.enable = lib.mkEnableOption "enables the discord configuration on the system";
+    steam.enable = lib.mkEnableOption "enables the steam configuration on the system";
   };
 
-  config = lib.mkIf config.discord.enable {
-    environment.systemPackages = [ pkgs.discord ];
+  config = lib.mkIf config.steam.enable {
+    environment.systemPackages = [ pkgs.steam ];
   };
 }

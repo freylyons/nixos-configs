@@ -1,10 +1,10 @@
 { pkgs, lib, config, ... } :
 {
   options = {
-    discord.enable = lib.mkEnableOption "enables the discord configuration on the system";
+    libreoffice.enable = lib.mkEnableOption "enables the libreoffice configuration on the system";
   };
 
-  config = lib.mkIf config.discord.enable {
-    environment.systemPackages = [ pkgs.discord ];
+  config = lib.mkIf config.libreoffice.enable {
+    environment.systemPackages = [ pkgs.libreoffice ];
   };
 }
