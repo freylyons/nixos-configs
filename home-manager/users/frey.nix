@@ -1,12 +1,13 @@
-{config, pkgs, ... }:
+{config, pkgs, lib, ... }:
 
 {
   imports = [
-    ../home-default.nix
+    ../modules/home-default.nix
   ];
 
-  home.username = "Frey";
-  home.homeDirectory = "/home/frey";
+  # BE WARNED, USER MUST ALREADY BE DEFINED ON THE SYSTEM WITH IDENTICAL SETTINGS FOR THESE TWO OPTIONS!!!
+  home.username = "frey"; # (!) make sure this is identical to the variable name that defines the user on the system
+  home.homeDirectory = "/home/frey"; # (!) make sure this is identical to home directory defined for the user on the system
 
   home.stateVersion = "23.11";
 

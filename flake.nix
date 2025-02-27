@@ -17,12 +17,18 @@
 
   outputs = { self, nixpkgs, home-manager, plasma-manager, ... } @inputs:
   let
+    # system
     default_system = "x86_64-linux";
+
+    # nixos/home manager
+    configPath.user.frey = ./home-manager/users/frey.nix; # path to user "frey"'s configuration for simplicity
+
+    # standalone home-manager
+    pkgs = import nixpkgs { inherit default_system; }; # make available the package set for standalone home-manager
   in
   {
     nixosConfigurations =
     let
-      configPath.user.frey = ./home-manager/users/frey.nix; # path to user "frey"'s configuration for simplicity
       home_manager_attrs = user_config: {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
@@ -49,6 +55,7 @@
       };
     };
 
+    # standalone home-manager configuration
     homeConfigurations = {
       frey = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
