@@ -15,6 +15,7 @@
 ## Micro
 
     -   migrate specifications for desktop apps into home-manager configurations for user spaces
+    -   check how to adjust the module activations (for users) outside of the desktop-applications-default
 
     
     

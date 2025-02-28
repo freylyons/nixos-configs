@@ -12,5 +12,4 @@
 
     git.enable = lib.mkDefault true;
     firefox.enable = lib.mkDefault true;
-
 }

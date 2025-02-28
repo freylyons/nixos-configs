@@ -17,18 +17,26 @@
     ./vlc.nix
   ];
 
-#   audacity.enable = lib.mkDefault true;
-#   firefox.enable = lib.mkDefault true;
-#   discord.enable = lib.mkDefault true;
-#   baobab.enable = lib.mkDefault true;
-#   libreoffice.enable = lib.mkDefault true;
-#   pycharm.enable = lib.mkDefault true;
-#   steam.enable = lib.mkDefault true;
-#   texlive.enable = lib.mkDefault true;
-#   xournalpp.enable = lib.mkDefault true;
-#   krita.enable = lib.mkDefault true;
-#   obs-studio.enable = lib.mkDefault true;
-#   signal.enable = lib.mkDefault true;
-#   telegram.enable = lib.mkDefault true;
-#   vlc.enable = lib.mkDefault true;
+  # enable by default
+  firefox.enable = lib.mkDefault true;
+  baobab.enable = lib.mkDefault true;
+  xournalpp.enable = lib.mkDefault true;
+  obs-studio.enable = lib.mkDefault true;
+  libreoffice.enable = lib.mkDefault true;
+  pycharm.enable = lib.mkDefault true;
+  vlc.enable = lib.mkDefault true;
+
+  # disable by default
+
+  audacity.enable = lib.mkDefault false;
+  steam.enable = lib.mkDefault false;
+  texlive.enable = lib.mkDefault false;
+  krita.enable = lib.mkDefault false;
+  signal.enable = lib.mkDefault false;
+  telegram.enable = lib.mkDefault false;
+
+  # test user package definition with module
+  discord.enable = lib.mkDefault true;
+  discord.packageUser = "frey";
+
 }
