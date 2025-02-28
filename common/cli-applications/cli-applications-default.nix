@@ -20,5 +20,5 @@
     kdePackages.powerdevil # power management
   ];
 
-  neovim.enable = lib.mkDefault true;
+  neovim.enable = lib.mkDefault false; # managed via home-manager
 }

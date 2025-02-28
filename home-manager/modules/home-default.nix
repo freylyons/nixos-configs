@@ -4,6 +4,7 @@
     imports = [
         ./git.nix
         ./firefox.nix
+        ./neovim.nix
     ];
 
     #
@@ -12,4 +13,5 @@
 
     git.enable = lib.mkDefault true;
     firefox.enable = lib.mkDefault true;
+    neovim.enable = lib.mkDefault true;
 }
