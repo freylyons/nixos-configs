@@ -1,6 +1,9 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
+  imports = [
+    ./neovim.nix
+  ];
 # system utility package management
   environment.systemPackages = with pkgs; [
     btop # system performance monitoring
@@ -16,4 +19,6 @@
     tree # CLI file system structure viewer
     kdePackages.powerdevil # power management
   ];
+
+  neovim.enable = lib.mkDefault true;
 }

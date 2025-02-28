@@ -15,9 +15,11 @@
     ./signal-desktop.nix
     ./telegram-desktop.nix
     ./vlc.nix
+    ./kitty.nix
   ];
 
   # enable by default
+  kitty.enable = lib.mkDefault true;
 
   # disable by default
   baobab.enable = lib.mkDefault false;
