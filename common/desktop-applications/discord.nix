@@ -1,20 +1,25 @@
 { pkgs, lib, config, ... } :
+let
+  package = "discord";
+in
 {
   options = {
-    discord.enable = lib.mkEnableOption "enables the discord configuration on the system";
-    discord.packageUser = lib.mkOption {
-      type = lib.types.nullOr lib.types.str;
-      default = null;
-      description = "If set, installs Discord for the specified user instead of system-wide.";
+    ${package} = {
+      enable = lib.mkEnableOption "enables the ${package} configuration on the system";
+      packageUser = lib.mkOption {
+        type = lib.types.nullOr lib.types.str;
+        default = null;
+        description = "If set, installs ${package} for the specified user instead of system-wide.";
+      };
     };
   };
 
   config = lib.mkMerge [
-    (lib.mkIf (config.discord.enable && config.discord.packageUser == null) {
-      environment.systemPackages = [ pkgs.discord ];
+    (lib.mkIf (config.${package}.enable && config.${package}.packageUser == null) {
+      environment.systemPackages = [ pkgs.${package} ];
     })
-    (lib.mkIf (config.discord.enable && config.discord.packageUser != null) {
-      users.users.${config.discord.packageUser}.packages = [ pkgs.discord ];
+    (lib.mkIf (config.${package}.enable && config.${package}.packageUser != null) {
+      users.users.${config.${package}.packageUser}.packages = [ pkgs.${package} ];
     })
   ];
 }
