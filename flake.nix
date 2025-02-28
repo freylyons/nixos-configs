@@ -6,16 +6,20 @@
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-23.11";
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs"; # Ensure consistency
+      inputs.nixpkgs.follows = "nixpkgs"; # Ensure consistency with nixpkgs
     };
     plasma-manager = {
       url = "github:nix-community/plasma-manager";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs"; # Ensure consistency with nixpkgs
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, plasma-manager, ... } @inputs:
+  outputs = { self, nixpkgs, home-manager, plasma-manager, nvf, ... } @inputs:
   let
     # system
     default_system = "x86_64-linux";
@@ -51,6 +55,7 @@
         modules = [
           ./hosts/desktop/configuration.nix
           home-manager.nixosModules.home-manager home_manager_attrs # home manager module (allows home-manager to be built with system)
+          nvf.nixosModules.default
         ];
       };
     };

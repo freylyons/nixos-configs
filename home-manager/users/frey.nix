@@ -1,4 +1,4 @@
-{config, pkgs, lib, ... }:
+{config, pkgs, lib, inputs, ... }:
 
 {
   imports = [
@@ -14,6 +14,4 @@
   #
   # --- enable/disable programs that differ from default specification here ---
   #
-
-
 }

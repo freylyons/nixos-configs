@@ -5,6 +5,7 @@
         ./git.nix
         ./firefox.nix
         ./neovim.nix
+#         ./NVF.nix
     ];
 
     #
@@ -13,5 +14,5 @@
 
     git.enable = lib.mkDefault true;
     firefox.enable = lib.mkDefault true;
-    neovim.enable = lib.mkDefault true;
+    neovim.enable = lib.mkDefault false; # disabled in favour of nvf
 }

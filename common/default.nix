@@ -6,6 +6,7 @@
     ./cli-applications/cli-applications-default.nix
     ./users/users.nix
     ./localisation.nix
+    ./NVF.nix # EXPERIMENTAL!
   ];
 
   # enable flakes for reproducable declarative building
