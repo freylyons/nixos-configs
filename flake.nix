@@ -46,6 +46,7 @@
         modules = [
           ./hosts/laptop/configuration.nix  # Laptop-specific config
           home-manager.nixosModules.home-manager home_manager_attrs # home manager module (allows home-manager to be built with system)
+          nvf.nixosModules.default
         ];
       };
 

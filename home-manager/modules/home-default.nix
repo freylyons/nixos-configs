@@ -5,7 +5,6 @@
         ./git.nix
         ./firefox.nix
         ./neovim.nix
-#         ./NVF.nix
     ];
 
     #
