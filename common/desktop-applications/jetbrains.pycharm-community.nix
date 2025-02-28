@@ -1,10 +1,11 @@
 { pkgs, lib, config, ... } :
 let
-  package = "libreoffice";
+  optionName = "pycharm";
+  package = "jetbrains.pycharm-community";
 in
 {
   options = {
-    ${package} = {
+    ${optionName} = {
       enable = lib.mkEnableOption "enables the ${package} configuration on the system";
       packageUser = lib.mkOption {
         type = lib.types.nullOr lib.types.str;
@@ -15,11 +16,11 @@ in
   };
 
   config = lib.mkMerge [
-    (lib.mkIf (config.${package}.enable && config.${package}.packageUser == null) {
+    (lib.mkIf (config.${optionName}.enable && config.${optionName}.packageUser == null) {
       environment.systemPackages = [ pkgs.${package} ];
     })
-    (lib.mkIf (config.${package}.enable && config.${package}.packageUser != null) {
-      users.users.${config.${package}.packageUser}.packages = [ pkgs.${package} ];
+    (lib.mkIf (config.${optionName}.enable && config.${optionName}.packageUser != null) {
+      users.users.${config.${optionName}.packageUser}.packages = [ pkgs.${package} ];
     })
   ];
 }

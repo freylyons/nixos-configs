@@ -1,6 +1,6 @@
 { pkgs, lib, config, ... } :
 let
-  package = "libreoffice";
+  package = "texliveFull";
 in
 {
   options = {
@@ -23,3 +23,4 @@ in
     })
   ];
 }
+

@@ -1,6 +1,6 @@
 { pkgs, lib, config, ... } :
 let
-  package = "libreoffice";
+  package = "telegram-desktop";
 in
 {
   options = {
@@ -23,3 +23,4 @@ in
     })
   ];
 }
+

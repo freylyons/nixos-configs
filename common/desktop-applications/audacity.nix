@@ -1,10 +1,26 @@
 { pkgs, lib, config, ... } :
+let
+  package = "audacity";
+in
 {
   options = {
-    audacity.enable = lib.mkEnableOption "enables the audacity configuration on the system";
+    ${package} = {
+      enable = lib.mkEnableOption "enables the ${package} configuration on the system";
+      packageUser = lib.mkOption {
+        type = lib.types.nullOr lib.types.str;
+        default = null;
+        description = "If set, installs ${package} for the specified user instead of system-wide.";
+      };
+    };
   };
 
-  config = lib.mkIf config.audacity.enable {
-    environment.systemPackages = [ pkgs.audacity ];
-  };
+  config = lib.mkMerge [
+    (lib.mkIf (config.${package}.enable && config.${package}.packageUser == null) {
+      environment.systemPackages = [ pkgs.${package} ];
+    })
+    (lib.mkIf (config.${package}.enable && config.${package}.packageUser != null) {
+      users.users.${config.${package}.packageUser}.packages = [ pkgs.${package} ];
+    })
+  ];
 }
+

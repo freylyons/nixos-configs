@@ -6,34 +6,33 @@
     ./discord.nix
     ./baobab.nix
     ./libreoffice.nix
-    ./pycharm.nix
+    ./jetbrains.pycharm-community.nix
     ./steam.nix
-    ./texlive.nix
+    ./texliveFull.nix
     ./xournalpp.nix
     ./krita.nix
     ./obs-studio.nix
-    ./signal.nix
-    ./telegram.nix
+    ./signal-desktop.nix
+    ./telegram-desktop.nix
     ./vlc.nix
   ];
 
   # enable by default
-  firefox.enable = lib.mkDefault true;
-  baobab.enable = lib.mkDefault true;
-  xournalpp.enable = lib.mkDefault true;
-  obs-studio.enable = lib.mkDefault true;
-  libreoffice.enable = lib.mkDefault true;
-  pycharm.enable = lib.mkDefault true;
-  vlc.enable = lib.mkDefault true;
 
   # disable by default
-
+  baobab.enable = lib.mkDefault false;
+  xournalpp.enable = lib.mkDefault false;
+  obs-studio.enable = lib.mkDefault false;
+  libreoffice.enable = lib.mkDefault false;
+  pycharm.enable = lib.mkDefault false;
+  vlc.enable = lib.mkDefault false;
+  firefox.enable = lib.mkDefault false;
   audacity.enable = lib.mkDefault false;
   steam.enable = lib.mkDefault false;
-  texlive.enable = lib.mkDefault false;
+  texliveFull.enable = lib.mkDefault false;
   krita.enable = lib.mkDefault false;
-  signal.enable = lib.mkDefault false;
-  telegram.enable = lib.mkDefault false;
+  signal-desktop.enable = lib.mkDefault false;
+  telegram-desktop.enable = lib.mkDefault false;
 
   # test user package definition with module
   discord.enable = lib.mkDefault true;

@@ -1,10 +1,25 @@
 { pkgs, lib, config, ... } :
+let
+  package = "obs-studio";
+in
 {
   options = {
-    obs-studio.enable = lib.mkEnableOption "enables the obs-studio configuration on the system";
+    ${package} = {
+      enable = lib.mkEnableOption "enables the ${package} configuration on the system";
+      packageUser = lib.mkOption {
+        type = lib.types.nullOr lib.types.str;
+        default = null;
+        description = "If set, installs ${package} for the specified user instead of system-wide.";
+      };
+    };
   };
 
-  config = lib.mkIf config.obs-studio.enable {
-    environment.systemPackages = [ pkgs.obs-studio ];
-  };
+  config = lib.mkMerge [
+    (lib.mkIf (config.${package}.enable && config.${package}.packageUser == null) {
+      environment.systemPackages = [ pkgs.${package} ];
+    })
+    (lib.mkIf (config.${package}.enable && config.${package}.packageUser != null) {
+      users.users.${config.${package}.packageUser}.packages = [ pkgs.${package} ];
+    })
+  ];
 }

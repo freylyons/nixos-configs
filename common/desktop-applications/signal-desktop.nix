@@ -1,6 +1,6 @@
 { pkgs, lib, config, ... } :
 let
-  package = "libreoffice";
+  package = "signal-desktop";
 in
 {
   options = {
@@ -23,3 +23,4 @@ in
     })
   ];
 }
+
