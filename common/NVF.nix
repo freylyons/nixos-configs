@@ -12,14 +12,14 @@
       vim = {
         theme = {
             enable = true;                                        
-            name = "catppuccin";
-            style = "frappe";
+            name = "rose-pine";
+            style = "moon";
         };
 
         # options
         options = {
           tabstop = 2;
-          shiftwidth = 2;
+          shiftwidth = 2; 
         };
 
         statusline.lualine.enable = true;
@@ -31,7 +31,6 @@
         filetree.nvimTree.setupOpts.sync_root_with_cwd = true;
 
         # enable system clipboard
-
         useSystemClipboard = true;
 
         # enable comment block tool
