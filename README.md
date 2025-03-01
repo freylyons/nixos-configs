@@ -1,5 +1,14 @@
 # Documentation
 
+NOTES: THIS DOCUMENTATION IS HORRIBLY OUT OF DATE AND I NEED TO UPDATE IT ASAP
+
+I have 3 neovim configurations:
+    -   A simple enable module in cli-applications with no configuration
+    -   A home manager module with lua configuation (following the vimjoyer neovim and home-manager video)
+    -   An NVF module in common (the primary one I'm working on)
+
+
+
 > Version control: Valid as of commit 8e455405e3e54f5ffa885511947d6fc6ce607441
 
 This is a NixOS config using flakes designed to define build instructions for multiple systems sharing common attributes. The design philosophy is modular, aiming to use Nix's declarative approach to produce a desktop environment with the same user settings across machines, while having a single place to maintain machine specific configurations. The machines defined here are my desktop and my laptop.
