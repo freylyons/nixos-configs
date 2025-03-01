@@ -28,6 +28,7 @@
 
         # enable file tree menu
         filetree.nvimTree.enable = true;
+        filetree.nvimTree.setupOpts.sync_root_with_cwd = true;
 
         # enable system clipboard
 
