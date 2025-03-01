@@ -36,13 +36,18 @@
         # enable comment block tool
         comments.comment-nvim.enable = true;
 
+        # enable terminal panel
+        terminal.toggleterm.enable = true;
+
         languages = {
           enableLSP = true;
           enableTreesitter = true;
 
           #  --- add your LSPs here ---
           nix.enable = true;
-
+          python.enable = true;
+          sql.enable = true;
+          markdown.enable = true;
         };
       };
     };
