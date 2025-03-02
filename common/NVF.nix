@@ -19,19 +19,20 @@
         # options
         options = {
           tabstop = 2;
-          shiftwidth = 2; 
+          shiftwidth = 2;
         };
 
         statusline.lualine.enable = true;
         telescope.enable = true;
         autocomplete.nvim-cmp.enable = true;
+        lineNumberMode = "number";
 
         # enable file tree menu
         filetree.nvimTree.enable = true;
         filetree.nvimTree.setupOpts.sync_root_with_cwd = true;
 
         # enable system clipboard
-        useSystemClipboard = true;
+        useSystemClipboard = false;
 
         # enable comment block tool
         comments.comment-nvim.enable = true;

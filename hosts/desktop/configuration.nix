@@ -56,11 +56,15 @@
   # configure driver settings
   hardware.nvidia = {
     modesetting.enable = true;
-    powerManagement.enable = false;
+    powerManagement.enable = true;
     powerManagement.finegrained = false;
-    open = false;
+    open = false; 
     nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
+
+  # set kms early loading
+  /* boot.initrd.kernelModules = [ "nvidia" "nvidia_modeset" "nvidia_uvm" "ndivdia_drm" ]; */
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.

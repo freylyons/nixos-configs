@@ -30,7 +30,7 @@
   vlc.enable = lib.mkDefault false;
   firefox.enable = lib.mkDefault false;
   audacity.enable = lib.mkDefault false;
-  steam.enable = lib.mkDefault false;
+  # steam.enable = lib.mkDefault false;
   texliveFull.enable = lib.mkDefault false;
   krita.enable = lib.mkDefault false;
   signal-desktop.enable = lib.mkDefault false;
@@ -39,5 +39,6 @@
   # test user package definition with module
   discord.enable = lib.mkDefault true;
   discord.packageUser = "frey";
+  programs.steam.enable = true;
 
 }
