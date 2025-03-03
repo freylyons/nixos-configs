@@ -18,11 +18,16 @@ in
       # hyprsplit
     ];
 
+    # enable hyprland and configure to use system level package
     wayland.windowManager.hyprland = {
       enable = true;
       package = null;         # }
       portalPackage = null;   # } allows home-manager to use the hyprland packages defined at the system level
     };
+
+    # hint electron apps to use wayland
+    home.sessionVariables.NIXOS_OZONE_WL = "1";
+
     wayland.windowManager.hyprland.settings = {
 
       # #######################################################################################
