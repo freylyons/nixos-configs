@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, inputs, ... }:
 let
   module = "hyprland";
 in
@@ -8,13 +8,21 @@ in
   };
 
   config = lib.mkIf config.${module}.enable {
+    
+    #
+    # --- Hyprland configuration ---
+    #
+    
+    wayland.windowManager.hyprland.plugins = with pkgs.hyprlandPlugins; [
+      hyprspace
+      # hyprsplit
+    ];
 
-    # wayland.windowManager.hyprland.plugins = [
-    #   inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprspace
-    #   inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprsplit
-    # ];
-
-    wayland.windowManager.hyprland.enable = true;
+    wayland.windowManager.hyprland = {
+      enable = true;
+      package = null;         # }
+      portalPackage = null;   # } allows home-manager to use the hyprland packages defined at the system level
+    };
     wayland.windowManager.hyprland.settings = {
 
       # #######################################################################################
@@ -53,7 +61,7 @@ in
       # Set programs that you use
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
-      "$menu" = "wofi --show drun";
+      "$menu" = "rufi -show drun -show-icons";
 
 
       #################
@@ -89,8 +97,8 @@ in
 
       # https://wiki.hyprland.org/Configuring/Variables/#general
       general = {
-          gaps_in = 5;
-          gaps_out = 20;
+          gaps_in = 1; 
+          gaps_out = 0.5;
 
           border_size = 2;
 
@@ -190,7 +198,7 @@ in
 
       # https://wiki.hyprland.org/Configuring/Variables/#misc
       misc = {
-          force_default_wallpaper = -1; # Set to 0 or 1 to disable the anime mascot wallpapers
+          force_default_wallpaper = 1; # Set to 0 or 1 to disable the anime mascot wallpapers
           disable_hyprland_logo = "false"; # If true disables the random hyprland logo / anime girl background. :(
       };
 
@@ -237,17 +245,20 @@ in
 
       bind = [
         # Open rofi
-        "$mainMod, SPACE, exec, rofi, -show, drun, -show-icons"
+        "$mainMod, T, exec, rofi, -show, drun, -show-icons"
+
+        # hyprspace workspace viewer
+        "$mainMod, W, overview:toggle, all"
 
         # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
         "$mainMod, Q, exec, $terminal"
         "$mainMod, C, killactive,"
         "$mainMod, M, exit,"
         "$mainMod, E, exec, $fileManager"
-        "$mainMod, V, togglefloating,"
-        "$mainMod, R, exec, $menu"
-        "$mainMod, P, pseudo," # dwindle
-        "$mainMod, J, togglesplit," # dwindle
+        "$mainMod, F, togglefloating,"
+        "$mainMod, N, exec, $menu"
+        "$mainMod, R, pseudo," # dwindle
+        "$mainMod, T, togglesplit," # dwindle
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"      
@@ -266,7 +277,11 @@ in
         "$mainMod ctrl, right, resizeactive,   60 0"
         "$mainMod ctrl, up, resizeactive,      0 -60"
         "$mainMod ctrl, down, resizeactive,    0  60"
-
+        "$mainMod ctrl shift, left, resizeactive,   -400 0"
+        "$mainMod ctrl shift, right, resizeactive,   400 0"
+        "$mainMod ctrl shift, up, resizeactive,      0 -400"
+        "$mainMod ctrl shift, down, resizeactive,    0  400"
+      
         # switch workspaces with mainmod + [0-9]
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
@@ -347,6 +362,22 @@ in
         # Fix some dragging issues with XWayland
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
       ];
+    };
+
+    #
+    # --- Waybar configuration ---
+    #
+
+    programs.waybar = {
+      enable = true;
+      systemd.enable = false; # systemd integration (not sure what it does)
+      # package = null; # use the system package
+      settings.mainBar = {
+        layer = "top";
+        modules-left = ["hyprland/workspaces" "hyprland/mode"];
+        modules-centre = ["hyprland/window"];
+        modules-right = ["cpu" "memory" "network" "pulseaudio" "bluetooth" "clock"];
+      };
     };
   };
 }
