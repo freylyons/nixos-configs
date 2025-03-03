@@ -260,22 +260,31 @@ in
         "$mainMod, C, killactive,"
         "$mainMod, M, exit,"
         "$mainMod, E, exec, $fileManager"
-        "$mainMod, F, togglefloating,"
+        # "$mainMod, F, togglefloating,"
         "$mainMod, N, exec, $menu"
         "$mainMod, R, pseudo," # dwindle
         "$mainMod, T, togglesplit," # dwindle
 
         # Move focus with mainMod + arrow keys
-        "$mainMod, left, movefocus, l"      
-        "$mainMod, right, movefocus, r"
-        "$mainMod, up, movefocus, u"
-        "$mainMod, down, movefocus, d"
+        "$mainMod, j, movefocus, l"      
+        "$mainMod, l, movefocus, r"
+        "$mainMod, i, movefocus, u"
+        "$mainMod, k, movefocus, d"
   
         # moving windows
-        "$mainMod shift, left, swapwindow, l"
-        "$mainMod shift, right, swapwindow, r"
-        "$mainMod shift, up, swapwindow, u"
-        "$mainMod shift, down, swapwindow, d"
+        "$mainMod, s, movewindow, l"
+        "$mainMod, f, movewindow, r"
+        "$mainMod, e, movewindow, u"
+        "$mainMod, d, movewindow, d"
+
+        # fullscreen windows
+        "$mainMod shift, e, fullscreenstate, 2"
+        "$mainMod shift, d, fullscreenstate, 0"
+
+        # send window to monitor
+        "$mainMod shift, s, movewindow, mon:l"
+        "$mainMod shift, f, movewindow, mon:r"
+
 
         # window resizing                     x  y
         "$mainMod ctrl, left, resizeactive,   -60 0"
@@ -299,25 +308,26 @@ in
         "$mainMod, 9, workspace, 9"
         "$mainMod, 0, workspace, 10"
 
+        # shift up and down workspace
 
         # Move active window to a workspace with mainMod + SHIFT + [0-9]
-        "$mainMod SHIFT, 1, movetoworkspacesilent, 1"
-        "$mainMod SHIFT, 2, movetoworkspacesilent, 2"
-        "$mainMod SHIFT, 3, movetoworkspacesilent, 3"
-        "$mainMod SHIFT, 4, movetoworkspacesilent, 4"
-        "$mainMod SHIFT, 5, movetoworkspacesilent, 5"
-        "$mainMod SHIFT, 6, movetoworkspacesilent, 6"
-        "$mainMod SHIFT, 7, movetoworkspacesilent, 7"
-        "$mainMod SHIFT, 8, movetoworkspacesilent, 8"
-        "$mainMod SHIFT, 9, movetoworkspacesilent, 9"
-        "$mainMod SHIFT, 10, movetoworkspacesilent, 10"
+        "$mainMod SHIFT, 1, movetoworkspace, 1"
+        "$mainMod SHIFT, 2, movetoworkspace, 2"
+        "$mainMod SHIFT, 3, movetoworkspace, 3"
+        "$mainMod SHIFT, 4, movetoworkspace, 4"
+        "$mainMod SHIFT, 5, movetoworkspace, 5"
+        "$mainMod SHIFT, 6, movetoworkspace, 6"
+        "$mainMod SHIFT, 7, movetoworkspace, 7"
+        "$mainMod SHIFT, 8, movetoworkspace, 8"
+        "$mainMod SHIFT, 9, movetoworkspace, 9"
+        "$mainMod SHIFT, 10, movetoworkspace, 10"
   
         # hyprspace workspace overview
         # bind = $mainMod, W, overview:toggle
 
         # Example special workspace (scratchpad)
-        "$mainMod, S, togglespecialworkspace, magic"
-        "$mainMod SHIFT, S, movetoworkspacesilent, special:magic"
+        # "$mainMod, S, togglespecialworkspace, magic"
+        # "$mainMod SHIFT, S, movetoworkspacesilent, special:magic"
 
         # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_down, workspace, e+1"
