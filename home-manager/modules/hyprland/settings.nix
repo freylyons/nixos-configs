@@ -61,7 +61,8 @@ in
             "$terminal"
             "nm-applet &"
             "systemctl --user enable --now waybar.service" # start waybar with systemd & uwsm
-            "hyprpaper & firefox"
+            "systemctl --user enable --now hyprpaper.service" # start hyprpaper
+            "firefox"
             "copyq --start-server" # start copyq server for clipboard support
           ];
 

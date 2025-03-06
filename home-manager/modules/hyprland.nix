@@ -34,6 +34,35 @@ in
     # hyprland configuration settings module 
     settings.enable = true;   
 
+    # hyprpaper configuration
+    home.file.".wallpapers/wp1.jpg".source = ./${module}/wallpapers/wp1.jpg;
+    home.file.".wallpapers/wp2.jpg".source = ./${module}/wallpapers/wp2.jpg;
+    home.file.".wallpapers/wp3.jpg".source = ./${module}/wallpapers/wp3.jpg;
+    home.file.".wallpapers/wp4.jpg".source = ./${module}/wallpapers/wp4.jpg;
+    home.file.".wallpapers/wp5.jpg".source = ./${module}/wallpapers/wp5.jpg;
+
+    services.hyprpaper = {
+      enable = true;
+      settings =  
+      let
+        wallpapers_path = "$HOME/.wallpapers/";
+        wp1 = "${wallpapers_path}/wp1.jpg";
+        wp2 = "${wallpapers_path}/wp2.jpg";
+        wp3 = "${wallpapers_path}/wp3.jpg";
+        wp4 = "${wallpapers_path}/wp4.jpg";
+        wp5 = "${wallpapers_path}/wp5.jpg";
+        wpa = wp3; # active wallpaper
+      in
+      {
+        preload = [ wpa ];
+        
+        wallpaper = [
+          "VGA-1, ${wpa}"
+          "DVI-D-1, ${wpa}"
+        ];
+      };
+    };
+
     # waybar configuration
     programs.waybar = { 
       enable = true;
