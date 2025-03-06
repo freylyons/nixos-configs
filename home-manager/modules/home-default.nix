@@ -6,6 +6,7 @@
         ./firefox.nix
         ./neovim.nix
         ./hyprland.nix
+        ./dolphin.nix
     ];
 
     #
@@ -16,4 +17,5 @@
     firefox.enable = lib.mkDefault true;
     neovim.enable = lib.mkDefault false; # disabled in favour of nvf
     hyprland.enable = lib.mkDefault true;
+    dolphin.enable = lib.mkDefault true;
 }
