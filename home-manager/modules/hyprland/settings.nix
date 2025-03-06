@@ -60,7 +60,9 @@ in
           "exec-once" = [
             "$terminal"
             "nm-applet &"
-            "waybar & hyprpaper & firefox"
+            "systemctl --user enable --now waybar.service" # start waybar with systemd & uwsm
+            "hyprpaper & firefox"
+            "copyq --start-server" # start copyq server for clipboard support
           ];
 
 

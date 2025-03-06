@@ -41,6 +41,9 @@
       # terminal emulator
       kitty
 
+      # file explorer
+      kdePackages.dolphin
+
       # clipboard manager
       copyq
 
