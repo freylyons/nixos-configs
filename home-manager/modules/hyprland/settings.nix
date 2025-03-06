@@ -244,7 +244,7 @@ in
             "$mainMod, T, exec, $terminal"
             "$mainMod, C, killactive,"
             "$mainMod, M, exit,"
-            "$mainMod, E, exec, $fileManager"
+            "$mainMod, G, exec, $fileManager"
             # "$mainMod, F, togglefloating,"
             "$mainMod, N, exec, $menu"
             "$mainMod, R, pseudo," # dwindle
