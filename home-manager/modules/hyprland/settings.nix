@@ -264,9 +264,9 @@ in
             "$mainMod shift, e, swapwindow, u"
             "$mainMod shift, d, swapwindow, d"
 
-            # fullscreen windows
+            # fullscreen and detach windows
             "$mainMod shift, i, fullscreenstate, 2"
-            "$mainMod shift, k, fullscreenstate, 0"
+            "$mainMod shift, k, togglefloating, 0"
 
             # send window to monitor
             "$mainMod ctrl, s, movewindow, mon:l"
