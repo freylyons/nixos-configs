@@ -295,7 +295,13 @@ in
             "$mainMod, 9, workspace, 9"
             "$mainMod, 0, workspace, 10"
 
-            # shift up and down workspace
+            # shift up and down workspace on monitor
+            "$mainMod shift, l, workspace, r+1"
+            "$mainMod shift, j, workspace, r-1"
+
+            # move current window up and down worspaces on monitor
+            "$mainMod ctrl, l, movetoworkspace, r+1"
+            "$mainMod ctrl, j, movetoworkspace, r-1"            
 
             # Move active window to a workspace with mainMod + SHIFT + [0-9]
             "$mainMod SHIFT, 1, movetoworkspace, 1"
