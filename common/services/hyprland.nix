@@ -24,13 +24,6 @@
     environment.sessionVariables = {
       
     };
-
-    hardware = {
-      graphics.enable = true;
-
-      nvidia.modesetting.enable = true;
-    };
-
     
     environment.systemPackages = with pkgs; [
       

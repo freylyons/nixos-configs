@@ -54,6 +54,7 @@
   # set nvidia driver
   services.xserver.videoDrivers = [ "nvidia" ];
   # configure driver settings
+  hardware.graphics.enable = true;
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = true;
