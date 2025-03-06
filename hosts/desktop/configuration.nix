@@ -30,6 +30,7 @@
 
   # Use the systemd-boot bootloader
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.configurationLimit = 10; # set maximum number of bootloader entries to prevent bootloader lag
 
 
   ## enable nvidia drivers
