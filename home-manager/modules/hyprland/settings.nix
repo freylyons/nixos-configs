@@ -258,13 +258,19 @@ in
             "$mainMod, e, movewindow, u"
             "$mainMod, d, movewindow, d"
 
+            # swapping windows
+            "$mainMod shift, s, swapwindow, l"      
+            "$mainMod shift, f, swapwindow, r"
+            "$mainMod shift, e, swapwindow, u"
+            "$mainMod shift, d, swapwindow, d"
+
             # fullscreen windows
-            "$mainMod shift, e, fullscreenstate, 2"
-            "$mainMod shift, d, fullscreenstate, 0"
+            "$mainMod shift, i, fullscreenstate, 2"
+            "$mainMod shift, k, fullscreenstate, 0"
 
             # send window to monitor
-            "$mainMod shift, s, movewindow, mon:l"
-            "$mainMod shift, f, movewindow, mon:r"
+            "$mainMod ctrl, s, movewindow, mon:l"
+            "$mainMod ctrl, f, movewindow, mon:r"
 
 
             # window resizing                     x  y
