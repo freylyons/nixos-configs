@@ -241,7 +241,7 @@ in
             "$mainMod, W, overview:toggle, all"
 
             # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-            "$mainMod, Q, exec, $terminal"
+            "$mainMod, T, exec, $terminal"
             "$mainMod, C, killactive,"
             "$mainMod, M, exit,"
             "$mainMod, E, exec, $fileManager"
@@ -269,8 +269,8 @@ in
             "$mainMod shift, d, swapwindow, d"
 
             # fullscreen and detach windows
-            "$mainMod shift, i, fullscreenstate, 2"
-            "$mainMod shift, k, togglefloating, 0"
+            "$mainMod, up, fullscreenstate, 2"
+            "$mainMod, down, togglefloating, 0"
 
             # send window to monitor
             "$mainMod ctrl, s, movewindow, mon:l"
@@ -300,12 +300,12 @@ in
             "$mainMod, 0, workspace, 10"
 
             # shift up and down workspace on monitor
-            "$mainMod shift, l, workspace, r+1"
-            "$mainMod shift, j, workspace, r-1"
+            "$mainMod ctrl, l, workspace, r+1"
+            "$mainMod ctrl, j, workspace, r-1"
 
             # move current window up and down worspaces on monitor
-            "$mainMod ctrl, l, movetoworkspace, r+1"
-            "$mainMod ctrl, j, movetoworkspace, r-1"            
+            "$mainMod shift, l, movetoworkspace, r+1"
+            "$mainMod shift, j, movetoworkspace, r-1"            
 
             # Move active window to a workspace with mainMod + SHIFT + [0-9]
             "$mainMod SHIFT, 1, movetoworkspace, 1"
