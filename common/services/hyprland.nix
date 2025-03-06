@@ -9,6 +9,7 @@
   config = lib.mkIf config.hyprland.enable {
     # display manager
     services.displayManager.sddm.enable = true;
+    # services.displayManager.sddm.theme = "sddm-astronaut";
 
     # display server (wayland)
     services.displayManager.sddm.wayland.enable = true;
@@ -26,6 +27,9 @@
     };
     
     environment.systemPackages = with pkgs; [
+
+      # # sddm login theme
+      # sddm-astronaut
       
       # system bar
       waybar
@@ -45,6 +49,7 @@
 
       # app launcher (trying a new one)
       wofi 
+      rofi-wayland
 
       # workspace overviewer
       hyprlandPlugins.hyprspace

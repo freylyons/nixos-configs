@@ -47,7 +47,7 @@ in
           # Set programs that you use
           "$terminal" = "kitty";
           "$fileManager" = "dolphin";
-          "$menu" = "rufi -show drun -show-icons";
+          "$menu" = "wofi --show drun";
 
 
           #################
@@ -232,7 +232,7 @@ in
 
           bind = [
             # Open rofi
-            "$mainMod, T, exec, rofi, -show, drun, -show-icons"
+            "$mainMod, space, exec, wofi --show drun"
 
             # hyprspace workspace viewer
             "$mainMod, W, overview:toggle, all"

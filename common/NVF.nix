@@ -32,7 +32,7 @@
         filetree.nvimTree.setupOpts.sync_root_with_cwd = true;
 
         # enable system clipboard
-        useSystemClipboard = false;
+        useSystemClipboard = true;
 
         # enable comment block tool
         comments.comment-nvim.enable = true;
