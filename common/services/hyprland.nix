@@ -27,24 +27,28 @@
     
     environment.systemPackages = with pkgs; [
       
-      # --- system bar ---
+      # system bar
       waybar
       # eww # the fully customisable one!
 
-      # --- wallpaper daemon ---
+      # wallpaper daemon
       swww
 
-      # --- terminal emulator ---
+      # terminal emulator
       kitty
 
-      # --- app launcher ---
-      rofi-wayland
+      # clipboard manager
+      copyq
 
-      # --- workspace overviewer ---
+      # screenshot utility
+      hyprshot
+
+      # app launcher (trying a new one)
+      wofi 
+
+      # workspace overviewer
       hyprlandPlugins.hyprspace
 
-      # --- workspace monitor splitter --- (allows a workspace to span multiple monitors?)
-      hyprlandPlugins.hyprsplit
     ]; 
 
     # desktop portal (handles desktop applications interactions between each other)
