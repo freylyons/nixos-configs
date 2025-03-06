@@ -8,8 +8,11 @@
 
   config = lib.mkIf config.hyprland.enable {
     # display manager
-    services.displayManager.sddm.enable = true;
-    # services.displayManager.sddm.theme = "sddm-astronaut";
+    services.displayManager.sddm = {
+      enable = true;
+      # theme = "sddm-astronaut-theme";
+      theme = "chili";
+    };
 
     # display server (wayland)
     services.displayManager.sddm.wayland.enable = true;
@@ -17,7 +20,6 @@
     # desktop environment
     programs.hyprland = {
       enable = true;
-      # nvidiaPatches = true;
       xwayland.enable = true;
       withUWSM = true;
     };
@@ -28,8 +30,9 @@
     
     environment.systemPackages = with pkgs; [
 
-      # # sddm login theme
+      # sddm login theme
       # sddm-astronaut
+      sddm-chili-theme
       
       # system bar
       waybar
@@ -52,7 +55,6 @@
 
       # app launcher (trying a new one)
       wofi 
-      rofi-wayland
 
       # workspace overviewer
       hyprlandPlugins.hyprspace
