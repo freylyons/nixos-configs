@@ -255,6 +255,10 @@ in
             "$mainMod, l, movefocus, r"
             "$mainMod, i, movefocus, u"
             "$mainMod, k, movefocus, d"
+
+            # move focus across monitors
+            "$mainMod shift, j, focusmonitor, l"
+            "$mainMod shift, l, focusmonitor, r"
       
             # moving windows
             "$mainMod, s, movewindow, l"
@@ -263,18 +267,18 @@ in
             "$mainMod, d, movewindow, d"
 
             # swapping windows
-            "$mainMod shift, s, swapwindow, l"      
-            "$mainMod shift, f, swapwindow, r"
-            "$mainMod shift, e, swapwindow, u"
-            "$mainMod shift, d, swapwindow, d"
+            "$mainMod ctrl, s, swapwindow, l"      
+            "$mainMod ctrl, f, swapwindow, r"
+            "$mainMod ctrl, e, swapwindow, u"
+            "$mainMod ctrl, d, swapwindow, d" 
 
             # fullscreen and detach windows
             "$mainMod, up, fullscreenstate, 2"
             "$mainMod, down, togglefloating, 0"
 
             # send window to monitor
-            "$mainMod ctrl, s, movewindow, mon:l"
-            "$mainMod ctrl, f, movewindow, mon:r"
+            "$mainMod shift, s, movewindow, mon:l"
+            "$mainMod shift, f, movewindow, mon:r"
 
 
             # window resizing                     x  y
@@ -299,13 +303,13 @@ in
             "$mainMod, 9, workspace, 9"
             "$mainMod, 0, workspace, 10"
 
-            # shift up and down workspace on monitor
-            "$mainMod ctrl, l, workspace, r+1"
-            "$mainMod ctrl, j, workspace, r-1"
+            # switch up and down workspace on monitor
+            "$mainMod shift, i, workspace, r+1"
+            "$mainMod shift, k, workspace, r-1"
 
             # move current window up and down worspaces on monitor
-            "$mainMod shift, l, movetoworkspace, r+1"
-            "$mainMod shift, j, movetoworkspace, r-1"            
+            "$mainMod shift, e, movetoworkspace, r+1"
+            "$mainMod shift, d, movetoworkspace, r-1"            
 
             # Move active window to a workspace with mainMod + SHIFT + [0-9]
             "$mainMod SHIFT, 1, movetoworkspace, 1"
@@ -317,7 +321,7 @@ in
             "$mainMod SHIFT, 7, movetoworkspace, 7"
             "$mainMod SHIFT, 8, movetoworkspace, 8"
             "$mainMod SHIFT, 9, movetoworkspace, 9"
-            "$mainMod SHIFT, 10, movetoworkspace, 10"
+            # "$mainMod SHIFT, 10, movetoworkspace, 10"
       
             # hyprspace workspace overview
             # bind = $mainMod, W, overview:toggle
