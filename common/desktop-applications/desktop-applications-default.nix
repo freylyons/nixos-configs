@@ -1,4 +1,7 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, config, ... }:
+let
+  module = "desktop-applications-default";
+in
 {
   imports = [
     ./audacity.nix
@@ -17,27 +20,34 @@
     ./vlc.nix
     ./kitty.nix
   ];
+  options = {
+    ${module}.enable = lib.mkEnableOption "Enable the ${module} configuration on the system";
+  };
 
-  # enable by default
-  kitty.enable = lib.mkDefault true;
+  config = lib.mkIf config.${module}.enable {
 
-  # disable by default
-  baobab.enable = lib.mkDefault false;
-  xournalpp.enable = lib.mkDefault false;
-  obs-studio.enable = lib.mkDefault false;
-  libreoffice.enable = lib.mkDefault false;
-  pycharm.enable = lib.mkDefault false;
-  vlc.enable = lib.mkDefault false;
-  firefox.enable = lib.mkDefault false;
-  audacity.enable = lib.mkDefault false;
-  steam.enable = lib.mkDefault false;
-  texliveFull.enable = lib.mkDefault false;
-  krita.enable = lib.mkDefault false;
-  signal-desktop.enable = lib.mkDefault false;
-  telegram-desktop.enable = lib.mkDefault false;
+    # enable by default
 
-  # test user package definition with module
-  discord.enable = lib.mkDefault true;
-  discord.packageUser = "frey";
+    # disable by default
+    kitty.enable = lib.mkDefault false;
+    baobab.enable = lib.mkDefault false;
+    xournalpp.enable = lib.mkDefault false;
+    obs-studio.enable = lib.mkDefault false;
+    libreoffice.enable = lib.mkDefault false;
+    pycharm.enable = lib.mkDefault false;
+    vlc.enable = lib.mkDefault false;
+    firefox.enable = lib.mkDefault false;
+    audacity.enable = lib.mkDefault false;
+    steam.enable = lib.mkDefault false;
+    texliveFull.enable = lib.mkDefault false;
+    krita.enable = lib.mkDefault false;
+    signal-desktop.enable = lib.mkDefault false;
+    telegram-desktop.enable = lib.mkDefault false;
+
+    # test user package definition with module
+    discord.enable = lib.mkDefault true;
+    discord.packageUser = "frey";
+
+  };
 
 }
