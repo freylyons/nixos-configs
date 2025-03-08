@@ -60,8 +60,10 @@ in
           "exec-once" = [
             "$terminal"
             "nm-applet &"
+            "mako" # notification daemon
             "systemctl --user enable --now waybar.service" # start waybar with systemd & uwsm
-            "systemctl --user enable --now hyprpaper.service" # start hyprpaper
+            "systemctl --user enable --now hyprpaper.service" # start hyprpaper ...
+            "systemctl --user enable --now hypridle.service" # start hypridle ...
             "firefox"
             "copyq --start-server" # start copyq server for clipboard support
           ];
@@ -246,9 +248,10 @@ in
             "$mainMod, M, exit,"
             "$mainMod, G, exec, $fileManager"
             # "$mainMod, F, togglefloating,"
-            "$mainMod, N, exec, $menu"
-            "$mainMod, R, pseudo," # dwindle
-            "$mainMod, T, togglesplit," # dwindle
+            # "$mainMod, N, exec, $menu"
+            # "$mainMod, R, pseudo," # dwindle
+            # "$mainMod, T, togglesplit," # dwindle
+            "$mainMod X, L, exec, pactl set-sink-mute @DEFAULT_SINK@ 1 && hyprlock"
 
             # Move focus with mainMod + arrow keys
             "$mainMod, j, movefocus, l"      

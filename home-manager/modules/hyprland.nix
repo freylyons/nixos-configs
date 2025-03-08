@@ -8,6 +8,8 @@ in
     ./${module}/hyprpaper.nix
     ./${module}/waybar.nix
     ./${module}/mako.nix
+    ./${module}/hypridle.nix
+    ./${module}/hyprlock.nix
   ];
   options = {
     ${module}.enable = lib.mkEnableOption "enables the ${module} home-manager configuration on the system";
@@ -53,8 +55,10 @@ in
     # authentication agent
 
     # idle management daemon
+    hypridle.enable = true;
 
     # screen lock utility
+    hyprlock.enable = true;
 
     # wireplumber? screen sharing?
 
