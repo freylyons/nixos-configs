@@ -1,6 +1,9 @@
 { lib, config, pkgs, inputs, ... }:
 
 {
+  imports = [
+    ./audio.nix
+  ];
 
   options = {
     hyprland.enable = lib.mkEnableOption "Enables the hyprland environment for the system";
@@ -24,10 +27,12 @@
       withUWSM = true;
     };
 
+    # declare environment variables here
     environment.sessionVariables = {
       
     };
     
+    # declare packages to be installed to build the desktop environment
     environment.systemPackages = with pkgs; [
 
       # sddm login theme
@@ -65,20 +70,11 @@
     xdg.portal.enable = true;
     xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
+    #
+    # --- modules ---
+    #
+
     # sound
-    security.rtkit.enable = true;
-    services.pipewire = { # used for screen sharing amongst other things
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-      jack.enable = true;
-    };
-
-    /* # set up hyprspace
-    programs.hyprland.plugins = [
-      pkgs.hyprlandPlugins.hyprspace
-    ]; */
-
+    audio.enable = true;
   };
 }
