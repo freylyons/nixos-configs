@@ -7,6 +7,7 @@ in
     ./${module}/settings.nix
     ./${module}/hyprpaper.nix
     ./${module}/waybar.nix
+    ./${module}/mako.nix
   ];
   options = {
     ${module}.enable = lib.mkEnableOption "enables the ${module} home-manager configuration on the system";
@@ -45,6 +46,20 @@ in
 
     # waybar configuration
     waybar.enable = true;
+
+    # notification daemon
+    mako.enable = true;
+
+    # authentication agent
+
+    # idle management daemon
+
+    # screen lock utility
+
+    # wireplumber? screen sharing?
+
+
+
 
   };
 }

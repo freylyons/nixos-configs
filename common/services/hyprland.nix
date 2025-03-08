@@ -60,10 +60,6 @@
 
       # app launcher (trying a new one)
       wofi 
-
-      # workspace overviewer
-      hyprlandPlugins.hyprspace
-
     ]; 
 
     # desktop portal (handles desktop applications interactions between each other)
