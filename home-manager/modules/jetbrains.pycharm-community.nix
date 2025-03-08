@@ -1,6 +1,7 @@
 { pkgs, lib, config, ... } :
 let
-  package = "libreoffice";
+  package = "pycharm";
+  packageName = "jetbrains.pycharm-community";
 in
 {
   options = {
@@ -8,7 +9,9 @@ in
   };
 
   config = lib.mkIf config.${package}.enable {
-      environment.systemPackages = [ pkgs.${package} ];
-    };
+    home.packages = [ pkgs.${packageName} ];
+  };
 }
+
+
 

@@ -18,4 +18,5 @@
             "Window One Screen to the Left" = "Meta+Shift+Left";
             };
       };
+    };
 }

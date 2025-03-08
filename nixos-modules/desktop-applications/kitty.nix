@@ -4,23 +4,11 @@ let
 in
 {
   options = {
-    ${package} = {
-      enable = lib.mkEnableOption "enables the ${package} configuration on the system";
-      packageUser = lib.mkOption {
-        type = lib.types.nullOr lib.types.str;
-        default = null;
-        description = "If set, installs ${package} for the specified user instead of system-wide.";
-      };
-    };
+    ${package}.enable = lib.mkEnableOption "enables the ${package} configuration on the system";
   };
 
-  config = lib.mkMerge [
-    (lib.mkIf (config.${package}.enable && config.${package}.packageUser == null) {
+  config = lib.mkIf config.${package}.enable {
       environment.systemPackages = [ pkgs.${package} ];
-    })
-    (lib.mkIf (config.${package}.enable && config.${package}.packageUser != null) {
-      users.users.${config.${package}.packageUser}.packages = [ pkgs.${package} ];
-    })
-  ];
+    };
 }
 

@@ -8,7 +8,8 @@ in
   };
 
   config = lib.mkIf config.${package}.enable {
-      environment.systemPackages = [ pkgs.${package} ];
-    };
+    home.packages = [ pkgs.${package} ];
+  };
 }
+
 

@@ -1,6 +1,6 @@
 { pkgs, lib, config, ... } :
 let
-  package = "libreoffice";
+  package = "vlc";
 in
 {
   options = {
@@ -8,7 +8,8 @@ in
   };
 
   config = lib.mkIf config.${package}.enable {
-      environment.systemPackages = [ pkgs.${package} ];
-    };
+    home.packages = [ pkgs.${package} ];
+  };
 }
+
 
