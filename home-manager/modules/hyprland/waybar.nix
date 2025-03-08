@@ -14,27 +14,18 @@ in
           mainBar = {
             layer = "top";
             position = "top";
-            height = 30;
+            height = 15;
            /*  output = [
               "eDP-1"
               "HDMI-A-1"
             ]; */
             modules-left = [ "hyprland/workspaces" "hyprland/mode" "wlr/taskbar" ];
             modules-center = [ "hyprland/window" "custom/hello-from-waybar" ];
-            modules-right = [ "mpd" "custom/mymodule#with-css-id" "network" "pulseaudio" "bluetooth" "clock"];
+            modules-right = [ "mpd" "network" "wireplumber" "bluetooth" "clock"];
 
             "hyprland/workspaces" = {
-              disable-scroll = true;
-              all-outputs = true;
+              all-outputs = false; # only show workspaces that exist on the monitor
             };
-            /* "custom/hello-from-waybar" = {
-              format = "hello {}";
-              max-length = 40;
-              interval = "once";
-              exec = pkgs.writeShellScript "hello-from-waybar" ''
-                echo "from within waybar"
-              '';
-            }; */
           };
         }; 
       }; 
