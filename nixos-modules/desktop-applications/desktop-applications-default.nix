@@ -39,14 +39,17 @@ in
     firefox.enable = lib.mkDefault false;
     audacity.enable = lib.mkDefault false;
     steam.enable = lib.mkDefault false;
+    discord.enable = lib.mkDefault false;
     texliveFull.enable = lib.mkDefault false;
     krita.enable = lib.mkDefault false;
     signal-desktop.enable = lib.mkDefault false;
     telegram-desktop.enable = lib.mkDefault false;
 
     # test user package definition with module
-    discord.enable = lib.mkDefault true;
-    discord.packageUser = "frey";
+
+    # user applications (move to home-manager configurations? probably scrap entirely because it requires extra setup for multi-user configuration)
+#     discord.packageUser = "frey";
+    # when this mode is scrapped, replace with home-manager modules which install the packages for a user through user packages
 
   };
 
