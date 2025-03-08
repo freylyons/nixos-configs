@@ -18,16 +18,15 @@
   #
 
   # desktop applications
-  desktop-applications-default.enable = false;
-  krita.enable = lib.mkDefault true;
+  desktop-applications-default.enable = lib.mkDefault true;
 
   # cli applications
-  cli-applications-default.enable = true;
+  cli-applications-default.enable = lib.mkDefault true;
 
   # services
-  services-default.enable = true;
+  services-default.enable = lib.mkDefault true;
 
   # users
-  users-default.enable = true;
+  users-default.enable = lib.mkDefault true;
 
 }
