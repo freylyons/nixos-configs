@@ -3,10 +3,8 @@
 {
   # Import shared system-wide settings
   imports = [
-    ../../common/default.nix
+    ../../nixos-modules/machine-default.nix
 #     ../../common/users.nix
-#     ../../common/networking.nix
-#     ../../common/home-manager.nix
     ./hardware-configuration.nix # Device-specific hardware settings
 #     ./extra.nix # Import additional tweaks for this system
   ];
@@ -66,6 +64,12 @@
 
   # set kms early loading
   /* boot.initrd.kernelModules = [ "nvidia" "nvidia_modeset" "nvidia_uvm" "ndivdia_drm" ]; */
+
+  #
+  # --- change system level module defaults ---
+  #
+
+
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
