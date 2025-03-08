@@ -47,6 +47,9 @@ in
           # Set programs that you use
           "$terminal" = "kitty";
           "$fileManager" = "dolphin";
+          "$browser" = "firefox";
+          "$editor" = "kitty nvim";
+          "$top" = "kitty btop";
           "$menu" = "wofi --show drun";
 
 
@@ -247,6 +250,9 @@ in
             "$mainMod, C, killactive,"
             "$mainMod, M, exit,"
             "$mainMod, G, exec, $fileManager"
+            "$mainMod, V, exec, $browser"
+            "$mainMod, B, exec, $top"
+            "$mainMod, N, exec, $editor"
             # "$mainMod, F, togglefloating,"
             # "$mainMod, N, exec, $menu"
             # "$mainMod, R, pseudo," # dwindle
