@@ -1,11 +1,13 @@
 { config, lib, ... }:
-
+let
+  module = "plasma";
+in
 {
     options = {
-        desktop-environment.enable = lib.mkEnableOption "Enables the Desktop environment for the system";
+        ${module}.enable = lib.mkEnableOption "Enables the ${module} environment for the system";
     };
 
-    config = lib.mkIf config.desktop-environment.enable {
+    config = lib.mkIf config.${module}.enable {
       # display manager
       services.displayManager.sddm.enable = true;
 
