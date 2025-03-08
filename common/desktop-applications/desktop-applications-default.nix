@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ lib, config, pkgs, ... }:
 let
   module = "desktop-applications-default";
 in

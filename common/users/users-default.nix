@@ -1,12 +1,11 @@
 { lib, config, ... }:
 let
-  module = "services-default";
+  module = "users-default";
 in
 {
   imports = [
-    ./plasma.nix
-    ./bluetooth.nix
-    ./postgres.nix
+    ./frey.nix
+    ./gaming.nix
   ];
 
   options = {
@@ -15,8 +14,8 @@ in
 
   config = lib.mkIf config.${module}.enable {
 
-    plasma.enable = lib.mkDefault true;
-    bluetooth.enable = lib.mkDefault true;
-    postgres.enable = lib.mkDefault false;
+    # default user account activations
+    users.frey.enable = lib.mkDefault true;
+    users.gaming.enable = lib.mkDefault false;
   };
 }

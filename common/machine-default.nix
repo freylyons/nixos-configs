@@ -5,7 +5,7 @@
     ./services/services-default.nix
     ./cli-applications/cli-applications-default.nix
     ./desktop-applications/desktop-applications-default.nix
-    ./users/users.nix
+    ./users/users-default.nix
     ./localisation.nix
     ./NVF.nix # EXPERIMENTAL!
   ];
@@ -13,7 +13,20 @@
   # enable flakes for reproducable declarative building
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  #
+  # --- Enable Defaults Modules ---
+  #
+
+  # desktop applications
   desktop-applications-default.enable = true;
-  krita.enable = true;
+
+  # cli applications
+  cli-applications-default.enable = true;
+
+  # services
+  services-default.enable = true;
+
+  # users
+  users-default.enable = true;
 
 }

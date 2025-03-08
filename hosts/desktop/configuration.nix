@@ -3,10 +3,8 @@
 {
   # Import shared system-wide settings
   imports = [
-    ../../common/default.nix
+    ../../common/machine-default.nix
 #     ../../common/users.nix
-#     ../../common/networking.nix
-#     ../../common/home-manager.nix
     ./hardware-configuration.nix # Device-specific hardware settings
 #     ./extra.nix # Import additional tweaks for this system
   ];
@@ -60,6 +58,11 @@
     open = false;
     nvidiaSettings = true;
   };
+
+
+  # change system level module defaults
+  krita.enable = true;
+
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
