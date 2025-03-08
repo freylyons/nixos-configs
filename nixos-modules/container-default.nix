@@ -19,15 +19,16 @@
 
   # desktop applications
   desktop-applications-default.enable = false;
-  krita.enable = lib.mkDefault true;
 
   # cli applications
   cli-applications-default.enable = true;
 
   # services
   services-default.enable = true;
+  plasma.enable = lib.mkDefault false;
 
   # users
   users-default.enable = true;
+  gaming.enable = lib.mkDefault false;
 
 }
