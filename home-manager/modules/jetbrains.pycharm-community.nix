@@ -1,7 +1,6 @@
 { pkgs, lib, config, ... } :
 let
   package = "pycharm";
-  packageName = "jetbrains.pycharm-community";
 in
 {
   options = {
@@ -9,7 +8,7 @@ in
   };
 
   config = lib.mkIf config.${package}.enable {
-    home.packages = [ pkgs.${packageName} ];
+    home.packages = [ pkgs.jetbrains.pycharm-community ];
   };
 }
 

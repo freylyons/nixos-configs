@@ -50,7 +50,7 @@
 
     # disable
     neovim.enable = lib.mkDefault false;
-    pycharm.enable = lib.mkDefault false; # error: attribute '"jetbrains.pycharm-community"' missing
+    pycharm.enable = lib.mkDefault true; # error: attribute '"jetbrains.pycharm-community"' missing
                                           #  at /nix/store/29lxyz4v5n8q3ql0326pd3a884rgpbbd-source/home-manager/modules/jetbrains.pycharm-community.nix:12:23:
                                           #      11|   config = lib.mkIf config.${package}.enable {
                                           #      12|     home.packages = [ pkgs.${packageName} ];
