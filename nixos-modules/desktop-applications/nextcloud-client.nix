@@ -1,6 +1,6 @@
 { pkgs, lib, config, ... } :
 let
-  package = "xournalpp";
+  package = "nextcloud-client";
 in
 {
   options = {
@@ -8,9 +8,7 @@ in
   };
 
   config = lib.mkIf config.${package}.enable {
-    home.packages = [ pkgs.${package} ];
-    home.file."$HOME/.config/xournalpp/settings.xml".source = ./xournalpp/settings.xml;
-  };
+      environment.systemPackages = [ pkgs.${package} ];
+    };
 }
-
 

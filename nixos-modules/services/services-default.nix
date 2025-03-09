@@ -8,6 +8,7 @@ in
     ./bluetooth.nix
     ./postgres.nix
     ./hyprland.nix
+    ./wacom.nix
   ];
 
   options = {
@@ -19,6 +20,7 @@ in
     plasma.enable = lib.mkDefault false;
     hyprland.enable = lib.mkDefault true;
     bluetooth.enable = lib.mkDefault true;
+    wacom.enable = lib.mkDefault true;
     postgres.enable = lib.mkDefault false;
   };
 }
