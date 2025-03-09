@@ -9,7 +9,7 @@ in
 
   config = lib.mkIf config.${package}.enable {
     home.packages = [ pkgs.${package} ];
-    home.file."$HOME/.config/xournalpp/settings.xml".source = ./xournalpp/settings.xml;
+    home.file.".config/xournalpp/settings.xml".source = ./xournalpp/settings.xml;
   };
 }
 
