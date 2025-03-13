@@ -33,9 +33,9 @@
       # neovim settings
       vim = {
         theme = {
-            enable = true;                                        
-            name = "rose-pine";
-            style = "moon";
+          enable = true;                                        
+          name = "rose-pine";
+          style = "moon";
         };
 
         # options
@@ -47,7 +47,7 @@
         statusline.lualine.enable = true;
         telescope.enable = true;
         autocomplete.nvim-cmp.enable = true;
-        lineNumberMode = "number";
+        lineNumberMode = "relNumber";
 
         # enable dev icons
         visuals.nvim-web-devicons.enable = true;
@@ -63,12 +63,11 @@
         # enable comment block tool
         comments.comment-nvim.enable = true;
 
-        # enable terminal panel
+        # enable terminal Panel
         terminal.toggleterm.enable = true;
 
         # enable debug mode
         # debugMode.enable = true;
-
 
         languages = {
           enableLSP = true;
