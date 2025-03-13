@@ -40,7 +40,7 @@
     krita.enable = lib.mkDefault true;
     libreoffice.enable = lib.mkDefault true;
     obs-studio.enable = lib.mkDefault true;
-    plasma.enable = lib.mkDefault true;
+    plasma.enable = lib.mkDefault false;
     signal-desktop.enable = lib.mkDefault true;
     steam.enable = lib.mkDefault true;
     telegram-desktop.enable = lib.mkDefault true;
