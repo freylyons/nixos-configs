@@ -27,6 +27,9 @@
         autocomplete.nvim-cmp.enable = true;
         lineNumberMode = "number";
 
+        # enable dev icons
+        visuals.nvim-web-devicons.enable = true;
+
         # enable file tree menu
         filetree.nvimTree.enable = true;
         filetree.nvimTree.setupOpts.sync_root_with_cwd = true;
