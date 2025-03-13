@@ -43,14 +43,6 @@
              "steam-unwrapped"
            ];
 
-  # DONE IN EXTRA
-#   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-#              "nvidia"
-#              "nvidia-x11"
-#              "nvidia-settings"
-#            ];
-  # set nvidia driver
-  services.xserver.videoDrivers = [ "nvidia" ];
   # configure driver settings
   hardware.graphics.enable = true;
   hardware.nvidia = {
@@ -59,7 +51,7 @@
     powerManagement.finegrained = false;
     open = false; 
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
   };
 
   # set kms early loading
