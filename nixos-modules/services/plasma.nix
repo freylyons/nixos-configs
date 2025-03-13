@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 let
   module = "plasma";
 in
@@ -16,5 +16,8 @@ in
 
       # desktop environment
       services.desktopManager.plasma6.enable = true;
-    };
+
+      # CLI clipboard utilities 
+      environment.systemPackages = [ pkgs.wl-clipboard ];
+  };
 }

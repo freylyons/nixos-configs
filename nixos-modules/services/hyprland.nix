@@ -60,6 +60,9 @@
 
       # app launcher (trying a new one)
       wofi 
+
+      # CLI clipboard utilities
+      wl-clipboard
     ]; 
 
     # desktop portal (handles desktop applications interactions between each other)

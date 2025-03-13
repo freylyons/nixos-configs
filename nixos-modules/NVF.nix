@@ -57,6 +57,7 @@
         filetree.nvimTree.setupOpts.sync_root_with_cwd = true;
 
         # enable system clipboard
+        # filetree.nvimTree.setupOpts.actions.use_system_clipboard = true;
         useSystemClipboard = true;
 
         # enable comment block tool
@@ -64,6 +65,10 @@
 
         # enable terminal panel
         terminal.toggleterm.enable = true;
+
+        # enable debug mode
+        # debugMode.enable = true;
+
 
         languages = {
           enableLSP = true;
