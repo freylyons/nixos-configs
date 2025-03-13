@@ -17,8 +17,8 @@ in
 
   config = lib.mkIf config.${module}.enable {
 
-    plasma.enable = lib.mkDefault true;
-    hyprland.enable = lib.mkDefault false;
+    plasma.enable = lib.mkDefault false;
+    hyprland.enable = lib.mkDefault true;
     bluetooth.enable = lib.mkDefault true;
     wacom.enable = lib.mkDefault true;
     postgres.enable = lib.mkDefault false;
