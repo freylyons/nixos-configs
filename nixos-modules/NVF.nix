@@ -5,6 +5,28 @@
 #     inputs.nvf.nixosModules.default
 #   ];
 
+
+  # packages I'm interested in:
+
+  # - variable inspection/debugging - 
+  # puremourning/vimspector variable inspection and debugging (seems pretty fleshed out)
+  # Willem-J-an/visidata.nvim pandas dataframe viewer
+
+  # - data viewing/editing - 
+  # VidocqH/data-viewer.nvim lightweight csv viewer
+  # hat0uma/csvview.nvim csv viewer and editor with customisable views (preferred, seems pretty fleshed out)
+  # kndndrj/nvim-dbee database viwer (seems pretty fleshed out)
+
+  # - image display -
+  # edluffy/hologram.nvim image displayer
+  # some kind of matplotlib viewer?
+  
+  # - python repl window - 
+  # Vigemus/iron.nvim 
+
+  # - juptyer emulation -
+  # luk400/vim-jukit 
+
   programs.nvf = {
     enable = true;
     settings = {
@@ -48,10 +70,20 @@
           enableTreesitter = true;
 
           #  --- add your LSPs here ---
+
+          # languages
           nix.enable = true;
           python.enable = true;
           sql.enable = true;
+          julia.enable = true;
+          haskell.enable = true;
+
+          # markup 
           markdown.enable = true;
+          html.enable = true;
+          # xml
+          # hrsh7th/vscode-langservers-extracted 
+          # redhat-developer/yaml-language-server 
         };
       };
     };
