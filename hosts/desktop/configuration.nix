@@ -43,6 +43,9 @@
              "steam-unwrapped"
            ];
 
+  # set nvidia driver
+  services.xserver.videoDrivers = [ "nvidia" ];
+
   # configure driver settings
   hardware.graphics.enable = true;
   hardware.nvidia = {
@@ -51,11 +54,24 @@
     powerManagement.finegrained = false;
     open = false; 
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
+    package = config.boot.kernelPackages.nvidiaPackages.latest;
+    forceFullCompositionPipeline = true;
   };
 
+  /* # Essential kernel parameters https://mikelev.in/futureproof/nixos-nvidia-wayland/
+  boot.kernelParams = [
+    "nvidia-drm.modeset=1"  # Enable KMS
+    "nvidia.NVreg_PreserveVideoMemoryAllocations=1"  # Helps with suspend/resume
+  ];
+
+  # Module loading order and configuration
+  boot.extraModprobeConfig = ''
+    options nvidia-drm modeset=1
+    softdep nvidia pre: nvidia-drm
+  ''; */
+
   # set kms early loading
-  /* boot.initrd.kernelModules = [ "nvidia" "nvidia_modeset" "nvidia_uvm" "ndivdia_drm" ]; */
+  boot.initrd.kernelModules = [ "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ]; 
 
   #
   # --- change system level module defaults ---
