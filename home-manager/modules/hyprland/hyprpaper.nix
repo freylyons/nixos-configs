@@ -16,6 +16,8 @@ in
     home.file.".wallpapers/wp3.jpg".source = "${fileSource}/wp3.jpg";
     home.file.".wallpapers/wp4.jpg".source = "${fileSource}/wp4.jpg";
     home.file.".wallpapers/wp5.jpg".source = "${fileSource}/wp5.jpg";
+    home.file.".wallpapers/wp6.jpg".source = "${fileSource}/wp6.jpg";
+    home.file.".wallpapers/wp7.jpg".source = "${fileSource}/wp7.jpg";
 
     # configure wallpaper display
     services.hyprpaper = {
@@ -30,7 +32,7 @@ in
         wp5 = "${wallpapers_path}/wp5.jpg";
         wp6 = "${wallpapers_path}/wp6.jpg";
         wp7 = "${wallpapers_path}/wp7.jpg";
-        wpa = wp3; # active wallpaper
+        wpa = wp7; # active wallpaper
       in
       {
         preload = [ wpa ];
