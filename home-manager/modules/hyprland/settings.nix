@@ -61,14 +61,12 @@ in
           # Or execute your favorite apps at launch like this:
 
           "exec-once" = [
-            "$terminal"
             "nm-applet &"
             "mako" # notification daemon
             "systemctl --user enable --now waybar.service" # start waybar with systemd & uwsm
             "systemctl --user enable --now hyprpaper.service" # start hyprpaper ...
             "systemctl --user enable --now hypridle.service" # start hypridle ...
             "nextcloud --background" # start nextcloud daemon
-            "firefox"
             "copyq --start-server" # start copyq server for clipboard support
           ];
 
