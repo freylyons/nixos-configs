@@ -22,6 +22,7 @@
         ./texliveFull.nix
         ./vlc.nix
         ./xournalpp.nix
+        ./feh.nix
     ];
 
     #
@@ -48,6 +49,7 @@
     vlc.enable = lib.mkDefault true;
     xournalpp.enable = lib.mkDefault true;
     pycharm.enable = lib.mkDefault true;
+    feh.enable = lib.mkDefault true;
 
     # disable
     neovim.enable = lib.mkDefault false;

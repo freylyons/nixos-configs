@@ -28,6 +28,8 @@ in
         wp3 = "${wallpapers_path}/wp3.jpg";
         wp4 = "${wallpapers_path}/wp4.jpg";
         wp5 = "${wallpapers_path}/wp5.jpg";
+        wp6 = "${wallpapers_path}/wp6.jpg";
+        wp7 = "${wallpapers_path}/wp7.jpg";
         wpa = wp3; # active wallpaper
       in
       {

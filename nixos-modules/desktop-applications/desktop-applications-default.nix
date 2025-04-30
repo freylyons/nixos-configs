@@ -20,6 +20,7 @@ in
     ./vlc.nix
     ./kitty.nix
     ./nextcloud-client.nix
+    ./feh.nix
   ];
   options = {
     ${module}.enable = lib.mkEnableOption "Enable the ${module} configuration on the system";
@@ -28,9 +29,9 @@ in
   config = lib.mkIf config.${module}.enable {
 
     # enable by default
-    nextcloud-client.enable = lib.mkDefault true;
 
     # disable by default
+    nextcloud-client.enable = lib.mkDefault false;
     kitty.enable = lib.mkDefault false;
     baobab.enable = lib.mkDefault false;
     xournalpp.enable = lib.mkDefault false;
@@ -46,7 +47,7 @@ in
     krita.enable = lib.mkDefault false;
     signal-desktop.enable = lib.mkDefault false;
     telegram-desktop.enable = lib.mkDefault false;
-
+    feh.enable = lib.mkDefault false;
 
     # test user package definition with module
 
