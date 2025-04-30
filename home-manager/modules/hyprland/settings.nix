@@ -93,7 +93,7 @@ in
               gaps_in = 1; 
               gaps_out = 0.5;
 
-              border_size = 2;
+              border_size = 1;
 
               # https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
               "col.active_border" = "rgb(182,10,201)";
