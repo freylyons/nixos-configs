@@ -61,6 +61,14 @@
           nvf.nixosModules.default
         ];
       };
+      pone-drone-hypervisor = nixpkgs.lib.nixosSystem {
+        system = default_system;
+        specialArgs = { inherit inputs; }; # Pass inputs to configs
+        modules = [
+          ./hosts/pone-drone-hypervisor/configuration.nix
+          nvf.nixosModules.default
+        ];
+      };
     };
 
     # standalone home-manager configuration
