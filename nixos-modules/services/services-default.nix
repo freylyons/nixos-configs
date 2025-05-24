@@ -9,6 +9,7 @@ in
     ./postgres.nix
     ./hyprland.nix
     ./wacom.nix
+    ./docker.nix
   ];
 
   options = {
@@ -22,5 +23,6 @@ in
     bluetooth.enable = lib.mkDefault true;
     wacom.enable = lib.mkDefault true;
     postgres.enable = lib.mkDefault false;
+    docker.enable = lib.mkDefault true;
   };
 }
