@@ -3,10 +3,8 @@
 {
   # Import shared system-wide settings
   imports = [
-    ../../nixos-modules/machine-default.nix
-#     ../../common/users.nix
+    ./packages.nix
     ./hardware-configuration.nix # Device-specific hardware settings
-#     ./extra.nix # Import additional tweaks for this system
   ];
 
   # Device-specific hostname
