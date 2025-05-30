@@ -7,6 +7,9 @@
     ./hardware-configuration.nix # Device-specific hardware settings
   ];
 
+  # enable flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # Device-specific hostname
   networking.hostName = "Freys-PC";
 
