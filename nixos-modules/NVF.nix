@@ -78,7 +78,7 @@
           nix.enable = true;
           python.enable = true;
           sql.enable = true;
-          julia.enable = true;
+          # julia.enable = true;
           haskell.enable = true;
 
           # markup 
