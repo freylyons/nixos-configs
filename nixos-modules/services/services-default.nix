@@ -18,11 +18,11 @@ in
 
   config = lib.mkIf config.${module}.enable {
 
-    plasma.enable = lib.mkDefault true;
+    plasma.enable = lib.mkDefault false;
     hyprland.enable = lib.mkDefault false;
-    bluetooth.enable = lib.mkDefault true;
-    wacom.enable = lib.mkDefault true;
+    bluetooth.enable = lib.mkDefault false;
+    wacom.enable = lib.mkDefault false;
     postgres.enable = lib.mkDefault false;
-    docker.enable = lib.mkDefault true;
+    docker.enable = lib.mkDefault false;
   };
 }

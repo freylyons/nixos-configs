@@ -27,10 +27,7 @@ in
 
   config = lib.mkIf config.${module}.enable {
 
-    # enable by default
-    nextcloud-client.enable = lib.mkDefault true;
-
-    # disable by default
+    nextcloud-client.enable = lib.mkDefault false;
     kitty.enable = lib.mkDefault false;
     baobab.enable = lib.mkDefault false;
     xournalpp.enable = lib.mkDefault false;
@@ -46,13 +43,6 @@ in
     krita.enable = lib.mkDefault false;
     signal-desktop.enable = lib.mkDefault false;
     telegram-desktop.enable = lib.mkDefault false;
-
-
-    # test user package definition with module
-
-    # user applications (move to home-manager configurations? probably scrap entirely because it requires extra setup for multi-user configuration)
-#     discord.packageUser = "frey";
-    # when this mode is scrapped, replace with home-manager modules which install the packages for a user through user packages
 
   };
 

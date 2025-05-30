@@ -24,20 +24,15 @@ in
 
   config = lib.mkIf config.${module}.enable {
 
-    # enable
-    git.enable = lib.mkDefault true; # version control
-    btop.enable = lib.mkDefault true; # system performance monitoring
-    tree.enable = lib.mkDefault true; # CLI file system structure viewer
-    ranger.enable = lib.mkDefault true; # CLI file system navigation
-    sysstat.enable = lib.mkDefault true; # in-depth system performance monitoring tools
-    inxi.enable = lib.mkDefault true; # system/hardware information tool
-    rsync.enable = lib.mkDefault true; # remote syncing
-    sshfs.enable = lib.mkDefault true; # sftp protocol
-    lxc.enable = lib.mkDefault true; # containerisation
-
-
-    # disable
-    neovim.enable = lib.mkDefault false; # managed via home-manager
+    git.enable = lib.mkDefault false; # version control
+    btop.enable = lib.mkDefault false; # system performance monitoring
+    tree.enable = lib.mkDefault false; # CLI file system structure viewer
+    ranger.enable = lib.mkDefault false; # CLI file system navigation
+    sysstat.enable = lib.mkDefault false; # in-depth system performance monitoring tools
+    inxi.enable = lib.mkDefault false; # system/hardware information tool
+    rsync.enable = lib.mkDefault false; # remote syncing
+    sshfs.enable = lib.mkDefault false; # sftp protocol
+    lxc.enable = lib.mkDefault false; # containerisation
     android-tools.enable = lib.mkDefault false; # tools for working with android operating systems
     usbutils.enable = lib.mkDefault false; # tools for querying usb devices
 
