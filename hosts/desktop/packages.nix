@@ -61,5 +61,6 @@ in
   # other packages
   environment.systemPackages = with pkgs; [
     hello
+    vscodium
   ];
 }
