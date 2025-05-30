@@ -1,8 +1,6 @@
 { lib, config, pkgs, ... }:
 {
-  imports = [
-    ../desktop-applications/desktop-applications-default.nix
-  ];
+  imports = [];
 
   options = {
     users.frey.enable = lib.mkEnableOption "enables the frey user configuration on the system";
