@@ -4,10 +4,14 @@ let
 in
 {
   imports = [
-    "${modules_path}"/cli-applications/default.nix
-    "${modules_path}"/desktop-applications/default.nix
-    "${modules_path}"/services/default.nix
-    "${modules_path}"/users/default.nix
+    # "${modules_path}"/cli-applications/default.nix
+    # "${modules_path}"/desktop-applications/default.nix
+    # "${modules_path}"/services/default.nix
+    # "${modules_path}"/users/default.nix
+    ../../nixos-modules/cli-applications/default.nix
+    ../../nixos-modules/desktop-applications/default.nix
+    ../../nixos-modules/services/default.nix
+    ../../nixos-modules/users/default.nix
   ];  
 
 
@@ -31,7 +35,7 @@ in
   xournalpp.enable = true;
   obs-studio.enable = true;
   libreoffice.enable = true;
-  pycharm.enable = true;
+  pycharm.enable = false;
   vlc.enable = true;
   firefox.enable = true;
   audacity.enable = true;

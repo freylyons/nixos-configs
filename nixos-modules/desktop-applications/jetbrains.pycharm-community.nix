@@ -1,7 +1,7 @@
 { pkgs, lib, config, ... } :
 let
   package = "pycharm";
-  packageName = "jetbrains.pycharm-community";
+  packageName = "jetbrains.pycharm-professional";
 in
 {
   options = {
