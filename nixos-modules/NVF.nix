@@ -68,8 +68,8 @@
         # enable debug mode
         # debugMode.enable = true;
 
+        lsp.enable = true;
         languages = {
-          enableLSP = true;
           enableTreesitter = true;
 
           #  --- add your LSPs here ---
