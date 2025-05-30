@@ -58,7 +58,6 @@
 
         # enable system clipboard
         # filetree.nvimTree.setupOpts.actions.use_system_clipboard = true;
-        useSystemClipboard = true;
 
         # enable comment block tool
         comments.comment-nvim.enable = true;

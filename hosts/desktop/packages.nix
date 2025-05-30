@@ -12,6 +12,7 @@ in
     ../../nixos-modules/desktop-applications/default.nix
     ../../nixos-modules/services/default.nix
     ../../nixos-modules/users/default.nix
+    ../../nixos-modules/NVF.nix
   ];  
 
 
