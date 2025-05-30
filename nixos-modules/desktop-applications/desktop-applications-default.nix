@@ -1,7 +1,4 @@
 { lib, config, pkgs, ... }:
-let
-  module = "desktop-applications-default";
-in
 {
   imports = [
     ./audacity.nix
@@ -21,29 +18,22 @@ in
     ./kitty.nix
     ./nextcloud-client.nix
   ];
-  options = {
-    ${module}.enable = lib.mkEnableOption "Enable the ${module} configuration on the system";
-  };
 
-  config = lib.mkIf config.${module}.enable {
-
-    nextcloud-client.enable = lib.mkDefault false;
-    kitty.enable = lib.mkDefault false;
-    baobab.enable = lib.mkDefault false;
-    xournalpp.enable = lib.mkDefault false;
-    obs-studio.enable = lib.mkDefault false;
-    libreoffice.enable = lib.mkDefault false;
-    pycharm.enable = lib.mkDefault false;
-    vlc.enable = lib.mkDefault false;
-    firefox.enable = lib.mkDefault false;
-    audacity.enable = lib.mkDefault false;
-    steam.enable = lib.mkDefault false;
-    discord.enable = lib.mkDefault false;
-    texliveFull.enable = lib.mkDefault false;
-    krita.enable = lib.mkDefault false;
-    signal-desktop.enable = lib.mkDefault false;
-    telegram-desktop.enable = lib.mkDefault false;
-
-  };
+  nextcloud-client.enable = lib.mkDefault false;
+  kitty.enable = lib.mkDefault false;
+  baobab.enable = lib.mkDefault false;
+  xournalpp.enable = lib.mkDefault false;
+  obs-studio.enable = lib.mkDefault false;
+  libreoffice.enable = lib.mkDefault false;
+  pycharm.enable = lib.mkDefault false;
+  vlc.enable = lib.mkDefault false;
+  firefox.enable = lib.mkDefault false;
+  audacity.enable = lib.mkDefault false;
+  steam.enable = lib.mkDefault false;
+  discord.enable = lib.mkDefault false;
+  texliveFull.enable = lib.mkDefault false;
+  krita.enable = lib.mkDefault false;
+  signal-desktop.enable = lib.mkDefault false;
+  telegram-desktop.enable = lib.mkDefault false;
 
 }
