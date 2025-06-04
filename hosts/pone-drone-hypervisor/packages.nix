@@ -27,31 +27,31 @@ in
   sshfs.enable = true; # sftp protocol
   lxc.enable = false; # containerisation
   android-tools.enable = false; # tools for working with android operating systems
-  usbutils.enable = true; # tools for querying usb devices
+  usbutils.enable = false; # tools for querying usb devices
 
   # Desktop applications
-  nextcloud-client.enable = true;
-  kitty.enable = true;
-  baobab.enable = true;
-  xournalpp.enable = true;
-  obs-studio.enable = true;
-  libreoffice.enable = true;
+  nextcloud-client.enable = false;
+  kitty.enable = false;
+  baobab.enable = false;
+  xournalpp.enable = false;
+  obs-studio.enable = false;
+  libreoffice.enable = false;
   pycharm.enable = false;
-  vlc.enable = true;
-  firefox.enable = true;
-  audacity.enable = true;
-  steam.enable = true;
-  discord.enable = true;
-  texliveFull.enable = true;
-  krita.enable = true;
-  signal-desktop.enable = true;
-  telegram-desktop.enable = true;
+  vlc.enable = false;
+  firefox.enable = false;
+  audacity.enable = false;
+  steam.enable = false;
+  discord.enable = false;
+  texliveFull.enable = false;
+  krita.enable = false;
+  signal-desktop.enable = false;
+  telegram-desktop.enable = false;
 
   # Services
-  plasma.enable = true;
+  plasma.enable = false;
   hyprland.enable = false;
-  bluetooth.enable = true;
-  wacom.enable = true;
+  bluetooth.enable = false;
+  wacom.enable = false;
   postgres.enable = false;
   docker.enable = true;
 
